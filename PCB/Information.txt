@@ -1,0 +1,5 @@
+PCBs designed for use with Racetrackr system.
+
+Original schematics made by eChook (Ian Cooper, Rowan Griffin, Ben Nagy, Matt Rudling).
+
+Modified and expanded by Thomas Jesper.
