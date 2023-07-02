@@ -1,0 +1,8 @@
+Designator,Footprint,Quantity,Value,LCSC Part #
+"D1, D2",1206,2,RED,
+"IGNITION, PWM",DIP-4_W7.62mm,2,PC817,
+J3,PinHeader_1x02_P2.54mm_Horizontal,1,IGNITION SWITCH,
+J4,JST_XH_B3B-XH-A_1x03_P2.50mm_Vertical,1,Conn_01x03_Pin,
+"R1, R2",1206,2,1k,
+"R3, R4, R5",1206,3,10k,
+U3,RaceTrackr Interface Board Reference,1,~,

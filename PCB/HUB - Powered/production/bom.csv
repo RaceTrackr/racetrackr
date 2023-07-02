@@ -1,0 +1,5 @@
+Designator,Footprint,Quantity,Value,LCSC Part #
+J7,TerminalBlock_bornier-2_P5.08mm,1,Screw_Terminal_01x02,
+"JP1, JP2, JP3, JP4",PinHeader_1x02_P2.54mm_Vertical,4,Jumper_2_Open,
+U1,LM2596 Buck Converter,1,12V LM2596 Buck Converter,
+U2,LM2596 Buck Converter,1,5V LM2596 Buck Converter,
