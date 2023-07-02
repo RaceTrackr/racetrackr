@@ -1,7 +1,5 @@
-These PCBs have all been designed to use with the RaceTrackr Node system. They are all open source. Pull/forks of this are welcome and encouraged!
+PCBs designed for use with Racetrackr system.
 
-We have purchased all of our PCBs from JLCPCB. Modified and expanded by Thomas Jesper and students from Queen Elizabeth High School.
+Original schematics made by eChook (Ian Cooper, Rowan Griffin, Ben Nagy, Matt Rudling).
 
-
-KNOWN ISSUES:
-- GX12 IO board has errors using G4 and G5. Will update this next order.
+Modified and expanded by Thomas Jesper.

@@ -1,0 +1,132 @@
+
+(rules PCB eChook Wireless Board
+  (snap_angle 
+    fortyfive_degree
+  )
+  (autoroute_settings
+    (fanout off)
+    (app.freerouting.autoroute on)
+    (postroute on)
+    (vias on)
+    (via_costs 50)
+    (plane_via_costs 5)
+    (start_ripup_costs 100)
+    (start_pass_no 20)
+    (layer_rule F.Cu
+      (active on)
+      (preferred_direction horizontal)
+      (preferred_direction_trace_costs 1.0)
+      (against_preferred_direction_trace_costs 2.0)
+    )
+    (layer_rule B.Cu
+      (active on)
+      (preferred_direction vertical)
+      (preferred_direction_trace_costs 1.0)
+      (against_preferred_direction_trace_costs 2.0)
+    )
+  )
+  (rule
+    (width 500.0)
+    (clear 200.2)
+    (clear 125.0 (type smd_to_turn_gap))
+    (clear 50.0 (type smd_smd))
+  )
+  (padstack "Via[0-1]_800:400_um"
+    (shape
+      (circle F.Cu 800.0 0.0 0.0)
+    )
+    (shape
+      (circle B.Cu 800.0 0.0 0.0)
+    )
+    (attach off)
+  )
+  (padstack "Via[0-1]_1000:600_um"
+    (shape
+      (circle F.Cu 1000.0 0.0 0.0)
+    )
+    (shape
+      (circle B.Cu 1000.0 0.0 0.0)
+    )
+    (attach off)
+  )
+  (via 
+    "Via[0-1]_1000:600_um" "Via[0-1]_1000:600_um" default
+  )
+  (via 
+    "Via[0-1]_1000:600_um-kicad_default" "Via[0-1]_1000:600_um" "kicad_default"
+  )
+  (via 
+    "Via[0-1]_800:400_um-POWER" "Via[0-1]_800:400_um" POWER
+  )
+  (via 
+    "Via[0-1]_1000:600_um-POWER" "Via[0-1]_1000:600_um" POWER
+  )
+  (via 
+    "Via[0-1]_800:400_um" "Via[0-1]_800:400_um" default
+  )
+  (via 
+    "Via[0-1]_800:400_um-kicad_default" "Via[0-1]_800:400_um" "kicad_default"
+  )
+  (via_rule
+    POWER "Via[0-1]_1000:600_um-POWER"
+  )
+  (via_rule
+    default "Via[0-1]_800:400_um"
+  )
+  (via_rule
+    "kicad_default" "Via[0-1]_800:400_um-kicad_default"
+  )
+  (class default
+    "BT_OUT" "BT_IN" "unconnected-(A1-Pad3)" "MOTOR_RPM" "WHEEL_RPM" "RACE_SWITCH" "MOTOR_PWM" "TELEMETRY_SWITCH"
+    BRAKE "RACE_START" "DEBUG_MODE" "F24_MODE" "SCREEN_SWITCH" "TX_HIGH" "RX_HIGH" "unconnected-(A1-Pad17)"
+    "unconnected-(A1-Pad18)" "BATT_T" "TEMP_1" CURRENT THROTTLE SDA SCL "TEMP_2"
+    "BATT_1" "unconnected-(A1-Pad28)" "unconnected-(A1-Pad30)" "unconnected-(J4-Pad1)" "unconnected-(J4-Pad2)" "unconnected-(U1-PadLV3)" "unconnected-(U1-PadLV4)" "unconnected-(J4-Pad3)"
+    "unconnected-(J4-Pad5)" "unconnected-(J4-Pad10)" "unconnected-(U1-PadHV3)" "unconnected-(U1-PadHV4)" "unconnected-(U2-Pad1)" "unconnected-(U2-Pad2)" "unconnected-(U2-Pad3)" "unconnected-(U2-Pad4)"
+    "unconnected-(U2-Pad5)" "unconnected-(U2-Pad6)" "unconnected-(U2-Pad7)" "unconnected-(U2-Pad8)" "unconnected-(U2-Pad9)" "unconnected-(U2-Pad10)" "unconnected-(U2-Pad11)" "unconnected-(U2-Pad12)"
+    "unconnected-(U2-Pad13)" "unconnected-(U2-Pad14)" "unconnected-(U2-Pad15)" "unconnected-(J4-Pad13)" "unconnected-(J4-Pad15)" "THROTTLE_B2B" "unconnected-(J7-Pad2)" "unconnected-(J7-Pad3)"
+    "unconnected-(U2-Pad21)" "unconnected-(U2-Pad22)" "unconnected-(U2-Pad23)" "unconnected-(U2-Pad24)" "unconnected-(U2-Pad25)" "unconnected-(U2-Pad26)" "unconnected-(U2-Pad27)" "unconnected-(U2-Pad28)"
+    "unconnected-(U2-Pad29)" "unconnected-(U2-Pad30)" "unconnected-(U2-Pad31)" "unconnected-(U2-Pad32)" "unconnected-(U2-Pad33)" "unconnected-(U2-Pad34)" "unconnected-(J7-Pad4)" "unconnected-(J7-Pad7)"
+    "unconnected-(J7-Pad8)" "unconnected-(J7-Pad9)" "unconnected-(J7-Pad13)" "MRPM_B2B" "WRPM_B2B" "CREF_B2B" "CSENSE_B2B" "TEMP1_B2B"
+    "TEMP2_B2B" "RX_LOW" "TX_LOW" "RACE_START_B2B" "SCREEN_SWITCH_B2B"
+    (clearance_class default)
+    (via_rule default)
+    (rule
+      (width 500.0)
+    )
+    (circuit 
+      (use_layer F.Cu B.Cu)
+    )
+  )
+  (class "kicad_default"
+    (clearance_class "kicad_default")
+    (via_rule kicad_default)
+    (rule
+      (width 250.0)
+    )
+    (circuit 
+      (use_layer F.Cu B.Cu)
+    )
+  )
+  (class POWER
+    "12_B2B" "24_B2B" "/+24V_ISOLATED"
+    (clearance_class POWER)
+    (via_rule POWER)
+    (rule
+      (width 1000.0)
+    )
+    (circuit 
+      (use_layer F.Cu B.Cu)
+    )
+  )
+  (class power
+    GND +5V +3V3
+    (clearance_class default)
+    (via_rule default)
+    (rule
+      (width 1000.0)
+    )
+    (circuit 
+      (use_layer F.Cu B.Cu)
+    )
+  )
+)

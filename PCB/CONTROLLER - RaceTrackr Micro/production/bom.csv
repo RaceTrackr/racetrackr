@@ -1,6 +1,0 @@
-Designator,Footprint,Quantity,Value,LCSC Part #
-J1,PinHeader_1x06_P2.54mm_Horizontal,1,Conn_01x06_Pin,
-R1,1206,1,120,C17909
-R2,1206,1,10k,C17902
-U3,SOT-23,1,ESD2CAN24-Q1,C907830
-U4,SOIC-8_3.9x4.9mm_P1.27mm,1,SN65HVD230,C12084
