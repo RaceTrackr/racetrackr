@@ -9,11 +9,16 @@
 // #define ESP32_C3_XIAO
 // #define WT32SC01
 // #define ESP32_TTGO_LORA_v2_1_6
+// #define TTGO_TBEAM
 
 // Define the controller board used in the node
 
 #define RACETRACKR_CONTROLLER
 // #define MCP2515
+
+// #define USE_EXTERN_ADS
+#define USE_TEMP_SENSOR
+// #define USE_RPM
 
 // Define the interface board used in the node
 #define RACETRACKR_MOSFET
@@ -57,6 +62,12 @@
 #endif
 
 #ifdef ESP32_DEV
+#define USE_BLUETOOTH
+#define CAN_RX_PIN GPIO_NUM_5
+#define CAN_TX_PIN GPIO_NUM_4
+#define GPS_RX_PIN 12
+#define GPS_TX_PIN 13
+
 #endif
 
 #ifdef ESP32_C3_XIAO
@@ -70,12 +81,20 @@
 #endif
 
 #ifdef ESP32_TTGO_LORA_v2_1_6
-#define BLUETOOTH_COMMUNICATION
-#define LORA_COMMUNICATION
-#define LORA_433
-// #define LORA_868
-#define CAN_RX_PIN GPIO_NUM_5
+#define USE_BLUETOOTH
+// #define USE_LORA
+// #define USE_GPS
+// #define USE_SD
+#define GPS_BAUD 115200
+#define GPS_UPDATE_RATE 250
+
+#define BAND 433E6
+
+#define CAN_RX_PIN GPIO_NUM_35
 #define CAN_TX_PIN GPIO_NUM_4
+
+#define GPS_RX_PIN 34
+#define GPS_TX_PIN 12
 
 #define SDA_PIN 21
 #define SCL_PIN 22
@@ -91,4 +110,26 @@
 #define LORA_SCK 5
 #define LORA_DIO 26
 #define LORA_RST 23
+
+#endif
+
+#ifdef TTGO_TBEAM
+
+#define BLUETOOTH_COMMUNICATION
+#define LORA_COMMUNICATION
+#define LORA_433
+#define GPS
+
+#define CAN_RX_PIN GPIO_NUM_25
+#define CAN_TX_PIN GPIO_NUM_13
+
+#define GPS_TX 34
+#define GPS_RX 12
+
+#define LORA_CS 18
+#define LORA_MISO 19
+#define LORA_MOSI 27
+#define LORA_SCK 5
+// #define LORA_DIO
+#define LORA_RST 14
 #endif
