@@ -2,31 +2,26 @@
 
 // Define the adapter board used in the node
 
-// #define M5STAMP_C3
 #define M5STAMP_S3
+// #define M5STAMP_C3
 // #define M5STAMP_PICO
 // #define ESP32_DEV
 // #define ESP32_C3_XIAO
 // #define WT32SC01
 // #define ESP32_TTGO_LORA_v2_1_6
 // #define TTGO_TBEAM
+// #define WAVESHARE_7
 
 // Define the controller board used in the node
 
-#define RACETRACKR_CONTROLLER
-// #define MCP2515
-
 // #define USE_EXTERN_ADS
-#define USE_TEMP_SENSOR
+// #define USE_TEMP_SENSOR
 // #define USE_RPM
 
 // Define the interface board used in the node
-#define RACETRACKR_MOSFET
+// #define RACETRACKR_MOSFET
 // #define RACETRACKR_LORA
 // #define RACETRACKR_CUSTOM
-
-#ifdef M5STAMP_C3
-#endif
 
 #ifdef M5STAMP_S3
 #define USE_STATUS_LED
@@ -56,6 +51,9 @@
 #define G17 40
 #define G18 41
 #define G19 42
+#endif
+
+#ifdef M5STAMP_C3
 #endif
 
 #ifdef M5STAMP_PICO
@@ -132,4 +130,10 @@
 #define LORA_SCK 5
 // #define LORA_DIO
 #define LORA_RST 14
+#endif
+
+#ifdef WAVESHARE_7
+#define CAN_RX_PIN GPIO_NUM_19
+#define CAN_TX_PIN GPIO_NUM_20
+#define GPIO_OUTPUT_PIN_SEL ((1ULL << 19) | (1ULL << 20))
 #endif
