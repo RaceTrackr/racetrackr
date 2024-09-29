@@ -249,6 +249,7 @@ public:
   bool requestAllData();
   bool dataPulse(int DELAY = 250);
   bool sendMessage(int id, byte message[8], unsigned int wait_for_transmission_delay = 0);
+  bool sendByte(int id, byte value, uint8_t index = 0, unsigned int wait_for_transmission_delay = 0);
   bool sendRTRMessage(int id, unsigned int wait_for_transmission_delay = 0);
   node_message receivedMessage(unsigned int wait_for_receive_delay = 0);
 

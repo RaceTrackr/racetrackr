@@ -125,6 +125,26 @@ bool RaceTrackrNode::sendMessage(int id, byte message[8], unsigned int wait_for_
   }
 }
 
+bool RaceTrackrNode::sendByte(int id, byte value, uint8_t index, unsigned int wait_for_transmission_delay)
+{
+  twai_message_t _message;
+  byte _temp_array[8] = {0, 0, 0, 0, 0, 0, 0, 0};
+  _message.identifier = id;
+  _message.data_length_code = 8;
+  _message.rtr = 0;
+  _message.extd = 0;
+  _message.ss = 1;
+  _temp_array[index] = value;
+  if (twai_transmit(&_message, pdMS_TO_TICKS(wait_for_transmission_delay)) == ESP_OK)
+  {
+    return true;
+  }
+  else
+  {
+    return false;
+  }
+}
+
 bool RaceTrackrNode::sendRTRMessage(int id, unsigned int wait_for_transmission_delay)
 {
   twai_message_t _message;
